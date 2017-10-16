@@ -16,7 +16,7 @@ def get_page(name_pages, queue_pages, name_articles):
         for href in reg_href.findall(page):
             if (href.find('.html') != -1) or (href.find('arkhiv-po-datam') != -1):  # if link is relevant
                 if href[6:-1] not in name_pages:  # if link is new
-                    name_pages.add(url + href[6:-1])
+                    name_pages.add(href[6:-1])
                     queue_pages.append(url + href[6:-1])
         if url_page.find('html') != -1:  # if there is text on page
             name_articles = process_page(page, url_page, name_articles)
@@ -47,7 +47,7 @@ def queue_init():
     queue_pages = []
     for section in reg_section.findall(main_page):  # init queue and set
         section = section.replace(last_part, '')
-        name_pages.add(url + section)
+        name_pages.add(section)
         queue_pages.append(url + section)
     return (name_pages, queue_pages, name_articles)
 

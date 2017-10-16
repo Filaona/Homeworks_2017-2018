@@ -5,6 +5,7 @@ import os
 import use_mystem
 
 
+
 def print_text(text, date, header, url_page, author, path_article):
     if not os.path.exists(path_article):
         os.makedirs(path_article)
@@ -24,6 +25,7 @@ def print_text(text, date, header, url_page, author, path_article):
     return name_article
 
 
+
 def write_csv(date, name_article, author, header, url_page):
     with open(os.path.join('.', 'Газета', 'metadata.csv'), 'a', encoding='utf-8') as f:
         writer = csv.writer(f, delimiter='\t', quotechar='"',
@@ -33,6 +35,8 @@ def write_csv(date, name_article, author, header, url_page):
                          'публицистика', '', '', '', '', 'нейтральный',
                          'н-возраст', 'н-уровень', 'районная', url_page, 'Красный Север', '', date[-4:],
                          'газета', 'Россия', 'Ямало-ненецкий АО', 'ru'])
+
+
 
 def process_page(page, url_page, name_articles):
 
@@ -74,6 +78,7 @@ def process_page(page, url_page, name_articles):
             use_mystem.use_mystem(name_article, date, path_article)
             write_csv(date, name_article, author, header, url_page)
     return name_articles
+
 
 
 def make_csv():

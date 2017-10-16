@@ -25,6 +25,7 @@ def get_page(name_pages, queue_pages, name_articles):
     return (name_pages, queue_pages, name_articles)
 
 
+
 def run_queue(name_pages, queue_pages, name_articles):
     make_csv()
     while queue_pages != []:

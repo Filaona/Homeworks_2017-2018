@@ -14,7 +14,7 @@ def get_page(name_pages, queue_pages, name_articles):
         page = response.read().decode('utf-8')
         reg_href = re.compile('href=".*?"')
         for href in reg_href.findall(page):
-            if (href.find('.html') != -1) or (href.find('arkhiv-po-datam') != -1):  # if link is relevant
+            if (href.find('.html') != -1) or (href.find('arkhiv-po-datam') != -1) or (href.find('?month=') != -1):  # if link is relevant
                 if href[6:-1] not in name_pages:  # if link is new
                     name_pages.add(href[6:-1])
                     queue_pages.append(url + href[6:-1])

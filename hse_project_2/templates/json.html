@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>
+        {% if not iscont %}
+        <p>Пока нет данных</p>
+    {% else %}
+        {{ content }}
+    {% endif %}
+    </p>
+    <p><a href = {{url_questionary}}>вернуться назад</a></p>
+</body>
+</html>

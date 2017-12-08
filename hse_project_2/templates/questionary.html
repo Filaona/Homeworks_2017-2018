@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма</title>
+</head>
+<body>
+<form action="/thanks">
+    <label>Имя: <input type="text" name="name"> </label><br>
+    <label>Возраст: <input type="text" name="age"></label><br>
+    <label>Родной город: <input type="text" name="city"></label><br>
+    <label>Родной язык: <input type="text" name="language"></label><br>
+    <label>Образование:<br>
+    <input type="radio" name="education" value="higher education">высшее<Br>
+    <input type="radio" name="education" value="secondary education">среднее<Br>
+    <input type="radio" name="education" value="incomplete higher education">неоконченное высшее<Br>
+    <input type="radio" name="education" value="incomplete secondary education">неоконченное среднее<Br>
+    <input type="radio" name="education" value="vocational education">среднее специальное<Br></label>
+    <h2><b>Как вы обычно говорите?</b></h2>
+    <p>Поля ответов обязательны для заполнения :)</p>
+    <table width="100%" cellspacing="0" cellpadding="6">
+        <tr>
+            <td width="150" valign="top"><input type="radio" name="quest1" value="var1">алфАвит</td>       <td valign="top"><input type="radio" name="quest1" value="var2">алфавИт</td>
+        </tr>
+        <tr>
+            <td width="150" valign="top"><input type="radio" name="quest2" value="var1">бАловать</td>      <td valign="top"><input type="radio" name="quest2" value="var2">баловАть</td>
+        </tr>
+        <tr>
+            <td width="150" valign="top"><input type="radio" name="quest3" value="var1">брАла</td>       <td valign="top"><input type="radio" name="quest3" value="var2">бралА</td>
+        </tr>
+        <tr>
+            <td width="150" valign="top"><input type="radio" name="quest4" value="var1">вклЮчим</td>      <td valign="top"><input type="radio" name="quest4" value="var2">включИм</td>
+        </tr>
+        <tr>
+            <td width="150" valign="top"><input type="radio" name="quest5" value="var1">пломбИровать</td>  <td valign="top"><input type="radio" name="quest5" value="var2">пломбировАть</td>
+        </tr>
+        <tr>
+            <td width="150" valign="top"><input type="radio" name="quest6" value="var1">чЕрпать</td>       <td valign="top"><input type="radio" name="quest6" value="var2">черпАть</td>
+        </tr>
+    </table>
+    <p><input type="submit" value="Ввести"></p>
+</form>
+<p>Дополнительно:</p>
+<ul>
+    {% for name, url in urls.items() %}
+    <li><a href="{{ url }}">{{ name }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

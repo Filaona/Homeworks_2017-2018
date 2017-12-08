@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика</title>
+</head>
+<body>
+    {% if not isstat %}
+        <p>Пока нет данных</p>
+    {% else %}
+        <h2>Статистика:</h2>
+        <table>
+            {% for var, figure in values.items() %}
+                <tr><td width="150" valign="top">{{var}}:</td> <td>{{figure}}% употреблений</td></tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    <p><a href = {{url_questionary}}>вернуться назад</a></p>
+</body>
+</html>

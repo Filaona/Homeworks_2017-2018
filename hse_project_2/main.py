@@ -112,7 +112,7 @@ def get_page(query):
 @app.route('/results')
 def results():
     if request.args['word']:
-        res = get_page(request.args['word'].strip())
+        res = get_page(request.args['word'].strip().lower())
         return render_template('results.html', res=res, url_search=url_for('search'), word=request.args['word'],
                                url_questionary=url_for('questionary'))
     return redirect('search')

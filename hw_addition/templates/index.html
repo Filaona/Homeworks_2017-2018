@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+    <p>Здесь можно транслитерировать написание слова в старую(дореволюционную) форму</p><br>
+    <form action="/result">
+        <label>Слово: <input type="text" name="word"> </label><br><br>
+        <p><input type="submit" value="Юхуу"></p><br>
+    </form>
+    <p>Погода в Скопье: </p>
+    {% for elem in weather %}
+        {{elem}}<br><br>
+    {%endfor%}
+    <ul>
+        {% for name, url in urls.items() %}
+            <li><a href="{{ url }}">{{ name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

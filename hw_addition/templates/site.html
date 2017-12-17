@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Транслитерированный сайт</title>
+</head>
+<body>
+    {% if not dorev %}
+        <p>Упс, что-то пошло не так...</p>
+    {% else %}
+        <p>{{ dorev }}</p>
+    {% endif %}<br><br>
+    <p>10 наиболее частотных слов: </p>
+    <ul>
+        {% for word, freq in freq_words %}
+            <li>"{{ word }}": {{freq}}</a></li>
+        {% endfor %} <br><br>
+    </ul>
+    <p><a href = {{url_index}}>вернуться на главную встраницу</a></p>
+</body>
+</html>
